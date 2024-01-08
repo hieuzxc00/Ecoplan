@@ -1,0 +1,576 @@
+// mail form
+.udr-fmail {
+    form {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.fmail-complete {
+    background-color: rgba($color: #0095e5, $alpha: 0.2);
+    padding: 40px;
+    text-align: center;
+}
+
+.mailform {
+    // Table
+    th,
+    td {
+        border: none;
+        padding: 20px;
+        border: none;
+        border-bottom: 24px solid #f2f4f8;
+    }
+
+    th {
+        width: 300px;
+        font-size: 24px;
+        font-weight: 500;
+        background-color: $main-cl;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+        padding: 20px 46px;
+    }
+
+    td {
+        padding: 20px;
+        background-color: #fff;
+        line-height: 1.8;
+    }
+
+    .f-none{
+        display: none !important;
+    }
+
+    // CLass : name , must , input
+    .fname {
+        margin: 0;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .fmust {
+        display: inline-block;
+        font-size: 12px;
+        background-color: #ed6862;
+        color: #fff;
+        padding: 2px 4px 4px;
+        line-height: 1;
+        border-radius: 2px;
+        margin: auto 0 !important;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 8px;
+        height: fit-content;
+    }
+
+    .f-inpt {
+        height: 40px;
+        padding: 6px 15px;
+        transition: all 0.3s ease;
+
+        &:focus {
+            border-color: $main-cl2;
+        }
+
+        &-age {
+            width: calc(100% - 30px);
+            margin-right: 10px;
+        }
+    }
+
+    textarea.f-inpt {
+        height: 200px;
+        resize: none;
+    }
+
+    .f-inpt[type="file"] {
+        height: auto;
+        padding-left: 0;
+    }
+
+    .flist {
+        display: flex;
+        flex-wrap: wrap;
+
+        .horizontal-item {
+            margin: 0 20px 0 0;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            line-height: 1.65;
+
+            span {
+                display: inline-block;
+                position: relative;
+                padding-left: 17px;
+            }
+        }
+
+        .f-inpt {
+            margin-right: 4px;
+            height: auto;
+            display: none;
+        }
+    }
+
+    .flist-radio {
+        label {
+            span {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 100%;
+                    background-color: transparent;
+                    border: 1px solid $main-cl2;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    bottom: 0;
+                    margin: auto 0;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 100%;
+                    background-color: $main-cl2;
+                    transition: all 0.3s ease;
+                    opacity: 0;
+                }
+            }
+        }
+
+        .f-inpt {
+            &:checked {
+                & + span {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .flist-checkbox {
+        label {
+            span {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 1px;
+                    left: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    width: 12px;
+                    height: 12px;
+                    background-color: transparent;
+                    border: 1px solid $main-cl2;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 1px;
+                    left: 2px;
+                    bottom: 0;
+                    margin: auto 0;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $main-cl2;
+                    transition: all 0.3s ease;
+                    opacity: 0;
+                }
+            }
+        }
+
+        .f-inpt {
+            &:checked {
+                & + span {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .upostcode {
+        display: flex;
+        flex-wrap: wrap;
+
+        .f-inpt {
+            width: 150px;
+            order: 1;
+        }
+
+        .error{
+            order: 3;
+        }
+    }
+
+    .postcode {
+        order: 2;
+        margin-left: 10px;
+        width: 80px;
+        height: 40px;
+        color: #fff;
+        background-color: $main-cl;
+        border: none;
+        border-radius: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
+
+    .f-sname {
+        display: flex;
+        justify-content: space-between;
+        p {
+            width: 48%;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        span {
+            margin-left: 5px;
+            &:last-child {
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    //Text: info, error
+    .info {
+        display: block;
+        letter-spacing: 0.016em;
+        margin: 5px 0;
+        letter-spacing: 0;
+        font-size: 14px;
+        color: #009900;
+    }
+
+    .error {
+        width: 100%;
+        margin-top: 7px;
+    }
+
+    .remail {
+        margin-top: 20px;
+    }
+
+    // privacy , k/c
+    .uprivacy {
+        border: 1px solid $main-cl2;
+        padding: 30px 35px;
+        overflow: auto;
+        height: 286px;
+        margin-top: 10px;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .uprivacy-tt {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .fseparate {
+        th {
+            padding: 0;
+            text-indent: -9999px;
+            border-bottom: none;
+        }
+
+        td {
+            padding: 0;
+            border-bottom: none;
+        }
+    }
+
+    .fposition {
+        margin-left: -280px;
+        padding: 70px 0 30px;
+    }
+}
+
+.ui-datepicker {
+    width: 250px !important;
+}
+
+.ubtn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 160px;
+
+    .ubtn-item {
+        text-align: center;
+        margin: 0;
+    }
+
+    .ubtn-send a,
+    .ubtn-send input,
+    .ubtn-cancel span {
+        max-width: 100%;
+        width: 300px;
+        height: 60px;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #fff;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        background-position: center right 20px;
+        background-repeat: no-repeat;
+        background-size: 16px auto;
+        background-color: $main-cl;
+        appearance: none;
+        -webkit-appearance: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ubtn-send {
+        input,
+        a {
+            background-image: url(../images/fmail-rt.png);
+        }
+    }
+
+    .ubtn-cancel span {
+        background-color: #e4675f;
+        background-image: url(../images/fmail-lt.png);
+        background-position: center left 20px;
+    }
+}
+
+.mw_wp_form_input {
+    .ubtn-cancel {
+        display: none;
+    }
+}
+
+.mw_wp_form_confirm {
+    // .fseparate,
+    .uprivacy,
+    .postcode,
+    .fmust,
+    .remail,
+    .info {
+        display: none;
+    }
+
+    .f-sname{
+        display: block;
+        span{
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 751px) {
+    // contact
+    .ubtn {
+        margin-top: 30px;
+        .ubtn-cancel {
+            span {
+                &:hover {
+                    background-color: #db1f13;
+                }
+            }
+        }
+
+        .ubtn-send {
+            input,
+            a {
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
+    .mailform {
+        .postcode {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 750px) {
+    .mailform {
+        display: block;
+        tbody,
+        thead,
+        th,
+        td,
+        tr {
+            display: block;
+            width: 100%;
+        }
+        th,
+        td {
+            padding: 15px;
+        }
+
+        th {
+            font-size: 15px;
+            border-bottom-width: 2px;
+            position: relative;
+        }
+
+        .fname {
+            font-size: 100%;
+            letter-spacing: 0;
+        }
+
+        .fmust {
+            font-size: 11px;
+            padding-bottom: 5px;
+        }
+
+        .f-inpt {
+            font-size: 14px;
+            height: 34px;
+        }
+
+        .remail {
+            margin-top: 15px;
+            font-size: 100%;
+        }
+
+        .info {
+            font-size: 12px;
+        }
+
+        .flist {
+            .horizontal-item {
+                margin: 3px 0 0 0;
+                display: block;
+                width: 100%;
+                &:last-child {
+                    margin-top: 0;
+                }
+            }
+            label {
+                font-size: 14px;
+            }
+        }
+
+        .flist-radio {
+            label {
+                span {
+                    &::before {
+                        top: 6px;
+                        bottom: unset;
+                    }
+                    &::after {
+                        top: 8px;
+                        bottom: unset;
+                    }
+                }
+            }
+        }
+
+        textarea.f-inpt {
+            height: 140px;
+        }
+
+        .postcode {
+            margin-left: 5px;
+            height: 34px;
+            font-size: 14px;
+        }
+
+        .fseparate {
+            th {
+                display: none;
+            }
+        }
+
+        .fposition {
+            margin-left: 0;
+            padding: 30px 0 15px;
+            p {
+                font-size: 100%;
+            }
+        }
+
+        .uprivacy {
+            padding: 15px;
+            height: 270px;
+            .uprivacy-tt {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 100%;
+            }
+        }
+    }
+
+    .ubtn {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        .ubtn-item {
+            width: auto;
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .ubtn-cancel span,
+        .ubtn-send a,
+        .ubtn-send input {
+            font-size: 14px;
+            width: 240px;
+            height: 50px;
+        }
+    }
+
+    .fmail-complete {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,161 @@
+/*==========================================================================*/
+/*                         M A I N   V I S U A L                            */
+/*==========================================================================*/
+
+.visual {
+    &__item {
+        position: relative;
+        overflow: hidden;
+        min-height: 840px;
+        background: url(../images/top_banner.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .inner {
+            padding: 0 25px;
+            position: absolute;
+            top: calc(50% - 12px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            column-gap: 20px;
+            justify-content: space-between;
+        }
+    }
+    &__content {
+        &-sub {
+            margin-bottom: 16px;
+            position: relative;
+            width: fit-content;
+            @include text(32px, var(--font-family), 700, var(--color-white), none);
+            letter-spacing: 0.04em;
+            line-height: 2.2em;
+            text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: calc(100% + 132px);
+                height: 2px;
+                background: var(--color-white);
+            }
+        }
+        &-desc {
+            margin-bottom: 30px;
+            @include text(32px, var(--font-family), 500, var(--color-white), none);
+            letter-spacing: 0.01em;
+            line-height: 1.6em;
+        }
+        &-circle {
+            display: flex;
+            align-items: center;
+            .circle {
+                &__txt {
+                    position: relative;
+                    width: 220px;
+                    height: 220px;
+                    display: flex;
+                    flex-shrink: 0;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background: var(--color-white);
+                    text-align: center;
+                    z-index: 10;
+                    &>span {
+                        margin-top: 12px;
+                        @include text(24px, var(--font-family), 700, var(--color-primary), none);
+                        background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        letter-spacing: 0.04em;
+                        line-height: 1.3em;
+                        &>span {
+                            background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            @include text(32px, var(--font-family), 700, var(--color-primary), none);
+                            line-height: 1.22em;
+                        }
+                    }
+                }
+                &__list {
+                    margin-top: -3px;
+                    margin-left: -10px;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 2px;
+                    &-item {
+                        position: relative;
+                        z-index: 5;
+                        @include text(var(--fs-18), var(--font-family), 400, var(--color-white), none);
+                        line-height: 1.55em;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -50px;
+                            width: 450px;
+                            height: 100%;
+                            z-index: -1;
+                        }
+                        &:nth-child(odd) {
+                            &::before {
+                                background: linear-gradient(90deg, rgba(71,174,247,0.8) 0%, rgba(71,174,247,0.8) 60%, rgba(71,174,247,0) 100%);
+                            }
+                        }
+                        &:nth-child(even) {
+                            &::before {
+                                background: linear-gradient(90deg, rgba(31,134,240,0.7) 0%, rgba(31,134,240,0.7) 60%, rgba(31,134,240,0) 100%);
+                            }
+                        }
+                        &:nth-child(2) {
+                            padding-left: 20px;
+                        }
+                        &:nth-child(3) {
+                            padding-left: 30px;
+                        }
+                        &:nth-child(4) {
+                            padding-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__product {
+        &-img {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            img {
+                max-width: 493px;
+                transform: translate(83px, 78px);
+            }
+        }
+        &-title {
+            position: absolute;
+            bottom: -55px;
+            left: 25px;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            @include text(20px, var(--font-family), 500, var(--color-white), none);
+            text-align: right;
+            line-height: 2em;
+            span {
+                @include text(28px, var(--font-family), 500, var(--color-white), none);
+                margin-right: -15px;
+            }
+        }
+    }
+}
+
+h2.visual__content-heading {
+    margin-bottom: 17px;
+    @include text(74px, var(--font-family), 900, var(--color-white), none);
+    letter-spacing: 0.1em;
+    line-height: 1.3em;
+    text-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+}

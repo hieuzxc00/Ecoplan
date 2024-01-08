@@ -1,0 +1,194 @@
+/*==========================================================================*/
+/*                           U T I L I T I E S                              */
+/*==========================================================================*/
+
+.ovh {
+    overflow: hidden;
+}
+
+.image-l {
+    float: left;
+    margin: 0 110px 20px 0;
+    line-height: 0;
+}
+
+.image-r {
+    float: right;
+    margin: 0 0 20px 110px;
+    line-height: 0;
+}
+
+.image-c {
+    text-align: center;
+    margin: 0 auto 20px;
+    line-height: 0;
+}
+
+section {
+    padding: 0;
+    margin: 0 0 120px 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    section {
+        padding: 0;
+        margin: 0 0 30px 0;
+    }
+}
+
+table {
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+#content {
+    padding: 0 15px 100px;
+    margin: 0 auto;
+    width: 1310px;
+    max-width: 100%;
+}
+
+.iline {
+    --cl: var(--main-cl);
+    --t: 75%;
+    --b: 100%;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) var(--t),
+        var(--cl) var(--t),
+        var(--cl) var(--b),
+        rgba(255, 255, 255, 0) var(--b)
+    );
+}
+
+// ======================== Topic-path ========================
+#topic-path {
+    padding: 11px 0;
+    position: relative;
+    z-index: 0;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0 min(calc((100vw - 100%) / -2), -15px);
+        z-index: -1;
+        background-color: #f2f4f8;
+    }
+
+    li,
+    a {
+        font-size: 14px;
+        color: var(--body-color);
+    }
+
+    li {
+        position: relative;
+        display: inline;
+        &::after {
+            content: "";
+            display: inline-block;
+            margin: 0 21px 0 18px;
+            @include border-arrow($main-cl, 13, 1px);
+            margin-bottom: 1px;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+// ======================== table ========================
+.tbl-bg {
+    padding: 120px 0;
+    position: relative;
+    z-index: 0;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0 min(calc((100vw - 100%) / -2), -15px);
+        z-index: -1;
+        background-color: #f2f4f8;
+    }
+}
+
+.tbl-wrap {
+    & + .tbl-wrap,
+    & + .image-c {
+        margin-top: var(--mt-under);
+    }
+}
+
+.under-tbl {
+    width: 100%;
+
+    &.tbl-fix {
+        table-layout: fixed;
+    }
+
+    tr {
+        &:last-child {
+            th,
+            td {
+                border-bottom: none;
+            }
+        }
+    }
+
+    td,
+    th {
+        border: none;
+        border-bottom: 24px solid #f2f4f8;
+    }
+
+    th {
+        background-color: $main-cl;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+        padding: 20px;
+    }
+
+    td {
+        background-color: #fff;
+        line-height: 1.8;
+        padding: 32px 49px 34px;
+        letter-spacing: -0.5px;
+    }
+}
+
+.tbl-block {
+    th {
+        width: 299px;
+    }
+
+    td {
+    }
+}
+
+
+
+.tbl-scroll {
+    table {
+        table-layout: fixed;
+    }
+    th {
+        border-left: 1px solid #fff;
+        &:first-child {
+            border-left: none;
+        }
+    }
+
+    td {
+        border-left: 1px solid $main-cl;
+        &:first-child {
+            border-left: none;
+        }
+    }
+}

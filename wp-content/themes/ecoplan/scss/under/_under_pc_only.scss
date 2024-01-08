@@ -1,0 +1,111 @@
+/*==========================================================================*/
+/*                     H O V E R    &    P C    O N L Y                     */
+/*==========================================================================*/
+
+@media screen and (min-width: 751px) {
+    .sp320,
+    .sp375,
+    .sp425 {
+        display: none;
+    }
+
+    .main-under {
+        .clearfix {
+            h4 {
+                margin-bottom: 61px;
+            }
+        }
+    }
+
+    .tbl-block-sp {
+        display: block;
+        tr,
+        th,
+        td,
+        thead,
+        tbody {
+            display: block;
+            width: 100%;
+        }
+
+        th {
+            border: none;
+        }
+    }
+
+    #topic-path {
+        a:hover {
+            text-decoration: underline;
+            color: $main-cl;
+        }
+
+        li {
+            &:first-child {
+                a {
+                    letter-spacing: 0.1em;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .clearfix {
+        h5 {
+            display: inline-block;
+            width: calc(100% - 460px - 110px);
+        }
+    }
+
+    .udr-anc {
+        a {
+            &:hover {
+                background-color: $main-cl2;
+            }
+        }
+    }
+
+    .uh5-list {
+        li {
+            @include col(3, 55px, 55px);
+        }
+    }
+
+    .ubanner {
+        &:not(.nhover) {
+            a {
+                &:hover {
+                    &::before {
+                        right: 0;
+                        background-color: $main-cl;
+                    }
+
+                    &::after {
+                        right: 20px;
+                        border-top-color: #fff;
+                        border-right-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .ulink {
+        &:hover {
+            color: $main-cl2;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* END screen-min:751px */
+
+@media screen and (min-width: 751px) and (max-width: 1440px) {
+    .under-visual {
+        min-height: 320px;
+        .umvs-title {
+            font-size: 55px;
+        }
+    }
+}
+
+/* END screen-min:751px && screen-max:1500px */

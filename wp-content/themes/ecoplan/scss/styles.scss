@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import "base.css";
+@import "fonts.css";
+
+// Libraries
+@import url(aos.css);
+@import url(slick.css);
+@import url(slick-theme.css);
+
+//Font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+/*==========================================================================*/
+/*                                                                          */
+/*    base.css  --> スタイルの初期設定を行うため、変更しないで下さい。      */
+/*    fonts.css --> フォントの初期設定を行うため、変更しないで下さい。      */
+/*                                                                          */
+/*==========================================================================*/
+
+/*==========================================================================*/
+/*                           Common-Setting                                 */
+/*==========================================================================*/
+/* 基本タグのフォントサイズを指定（12px -> 120% or 1.2em ） */
+
+// Mixins
+@import './mixins/basic';
+
+// Parts
+@import './global/setting';
+@import './global/utilities';
+@import './global/header';
+@import './global/visual';
+@import './global/content';
+@import './global/footer';
+@import './global/browser';

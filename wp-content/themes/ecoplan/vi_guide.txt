@@ -1,0 +1,19 @@
+・Trong page archive: không được sử dụng WP_Query không cần thiết
+Nếu như muốn đổi posts_per_page, thì hãy sử dụng action hook pre_get_posts
+・Không sử dụng WP Page Navi
+Về cơ bản, có thể sử dụng paginate_links để thay thế, đừng thêm những plugin không cần thiết vào
+・Không sử dụng All-in-One WP Migration
+Plugin này ko cần thiết, nên đừng cài vào
+・Hãy sử dụng ngôn ngữ là Tiếng Nhật 
+Hãy cài version tiếng nhật
+https://ja.wordpress.org/download/
+・Không sử dụng Contact Form 7, hãy sử dụng MW WP Form
+Do plugin tạo màn hình xác nhận của Contact Form 7 thường xảy ra vấn đề, nên nếu không có chỉ định, thì hãy sử dụng MW WP Form
+Manual site：https://plugins.2inc.org/mw-wp-form/
+・jQuery: hãy sử dụng jQuery của WordPress
+hãy sử dụng wp_enqueue_script và gọi ra.
+
+Bên dưới thì điều chỉnh tùy ý
+・Post type, tên category: cũng hãy làm tiếng nhật giống vậy (slug: thì để tiếng anh cũng được)
+・Khi liên kết home_url và get_theme_file_uri và đường dẫn: hãy thêm đối số cho đường dẫn. 
+vd:  home_url( 'contact/' ) 

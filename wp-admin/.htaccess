@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "ecoplan2001.com"
+AuthUserFile "/home/admin/domains/fvn-office.net/public_html/dev/newcoding/1001007068007-01/wp-admin/.htpasswd"
+require valid-user

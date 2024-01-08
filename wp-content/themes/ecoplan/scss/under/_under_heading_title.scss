@@ -1,0 +1,76 @@
+/*==========================================================================*/
+/*                       H E A D I N G   T I T L E                          */
+/*==========================================================================*/
+.main-under {
+    h3,
+    h4,
+    h5,
+    h6 {
+        position: relative;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 54px;
+        margin-bottom: 10px;
+        color: $main-cl;
+    }
+    .h3-en {
+        color: $main-cl2;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    h4 {
+        font-size: 40px;
+        background-color: $main-cl;
+        color: #fff;
+        line-height: 1.4;
+        padding: 8px 39px 16px;
+        margin-bottom: 30px;
+    }
+
+    h5 {
+        font-size: 32px;
+        color: $main-cl2;
+        padding-left: 28px;
+        margin-bottom: 28px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            bottom: 4px;
+            width: 3px;
+            background-color: $main-cl2;
+        }
+    }
+
+    h6 {
+        font-size: 26px;
+        color: $main-cl;
+        border-bottom: 2px solid $main-cl;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    // input,
+    // button,
+    // textarea,
+    // select,
+    // p,
+    // blockquote,
+    // th,
+    // td,
+    // pre,
+    // address,
+    // li,
+    // dt,
+    // dd ,
+    // a{
+    //     font-size: 160%;
+    // }
+}
